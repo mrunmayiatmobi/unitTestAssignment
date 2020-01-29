@@ -5,7 +5,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class TestString {
-
 	@Test
 	public void TestForEmpty()
 	{
@@ -15,7 +14,6 @@ public class TestString {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 	@Test
 	public void TestForNull()
@@ -26,7 +24,6 @@ public class TestString {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 	@Test
 	public void TestForAdd()
@@ -51,7 +48,6 @@ public class TestString {
 	@Test
 	public void TestForN()
 	{
-		
 		try {
 			AdditionV.addV("\n-2,3,1,-2");
 		} catch (Exception e) {

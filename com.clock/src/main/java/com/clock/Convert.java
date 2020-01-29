@@ -1,8 +1,14 @@
 package com.clock;
+
 public class Convert {
-	public static String colourC(String clockString){
+	public static String colourC(String clockString) throws Exception{
 		String[] numberString = clockString.split("[:]");
 		String formattedString = null;
+		if(clockString.equals(null) || clockString.length() < 8 )
+			throw new Exception("Time Not provied or Invalid Time Format");
+		else if(clockString.length() > 8)
+			throw new Exception("Invalid Time Format");
+		else {
 //		String secondString = checkSeconds(numberString[2]);
 //		String minuteString = checkMintues(numberString[1])+checkMintuesLower(numberString[1]);
 //		String hourString = checkHours(numberString[0])+checkHoursLower(numberString[0]);
@@ -10,6 +16,7 @@ public class Convert {
 		formattedString = checkSeconds(numberString[2]) + checkHours(numberString[0]) + 
 			checkHoursLower(numberString[0]) + checkMintues(numberString[1]) + 
 			checkMintuesLower(numberString[1]);
+		}
 		return formattedString;
 		
 	}
@@ -36,7 +43,6 @@ public class Convert {
 		return iteratorForString(4, que, "Y", "O" , true);
 	}
 	private static String checkMintues(String string) {
-		String finalMintuesString="";
 		int mintues=Integer.parseInt(string);
 		int que = mintues/5;
 		return iteratorForString(11, que, "Y", "O" , false);
